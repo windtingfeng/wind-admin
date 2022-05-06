@@ -90,11 +90,12 @@ export default {
     getUserList: config => {
         const data = JSON.parse(config.body)
         const { limit, page } = data
-        const userlist = list.filter((item,index) => index < limit * page && index > limit * (page -1))
+        const userlist = list.filter((item,index) => index <= limit * page && index > limit * (page -1))
         return {
             code:200,
             data:{
-                userlist
+                userlist,
+                total:list.length
             }
 
         }

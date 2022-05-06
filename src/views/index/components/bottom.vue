@@ -93,7 +93,6 @@ export default {
         const store = useStore()
         async function getsales(){
             let data = await getSalesData({token:store.state.user.token})
-            console.log(data)
             tableData.value = data.data.saleslist
         }
         getsales()
