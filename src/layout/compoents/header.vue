@@ -50,7 +50,7 @@
         />
         </div>
         <div class="headermenu__right__over">
-            <a href="javascript:;">个人信息</a>
+            <a href="javascript:;"  @click="getinfo">个人信息</a>
             <a href="javascript:;">修改信息</a>
             <a href="javascript:;" @click="checklogout">退出登录</a>
         </div>
@@ -85,12 +85,16 @@ export default {
         store.commit('LOGOUT')
         router.push('/login')
     }
+    function getinfo(){
+      store.commit('SET_MENU')
+    }
     return {
       user,
       overshow,
       isShowAction,
       action,
-      checklogout
+      checklogout,
+      getinfo
     };
   },
 };
